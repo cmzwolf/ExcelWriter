@@ -31,7 +31,7 @@ fl.writeFile();
 
 ## Motivation
 
-I needed a quick factored way for creating excel files from common Java collection objects. This tiny library fit with my needs and I'm happy to share it. Maybe it can fit with your needs too.
+I needed a quick factored way for creating excel files in some Java Projects. This tiny library fits with my needs and I'm happy to share it. Maybe it can fit with your needs too.
 
 ## License
 
