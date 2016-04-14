@@ -15,7 +15,19 @@ The _columnsNames_ List contains the names of the columns.
 The _columnsTypes_ map contains the type of the colums (legal arguments are _number_,  _date_ and _String_) and the key of the map are the element contained into the _columnNames_ List. 
 The _columnsDataContent_ map contains the data of each column. The key of the map are the element contained into the _columnNames_ List.
 
-Example of usage are provided in the class com.excel.writer.example.ExampleofUse. 
+Example of usage are provided in the class _com.excel.writer.example.ExampleofUse_.
+
+The creation of the excel content is straightforward starting from these three objects:
+ ```java
+// create the excel content.
+ExcelCreator ec = new ExcelCreator(sheetName, columnsNames,
+				columnsTypes, columnsDataContent, false);
+// the boolean call argument is a flag for rounding or not the display of numeric values. True --> round numerics. False --> no rounding.		
+
+// write the excel content into a file
+ExcelFileWriter fl = new ExcelFileWriter(ec, "myExcelFile.xls");
+fl.writeFile();		
+```
 
 ## Motivation
 

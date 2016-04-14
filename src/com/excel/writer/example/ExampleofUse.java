@@ -1,6 +1,5 @@
 package com.excel.writer.example;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.excel.writer.ExcelCreator;
+import com.excel.writer.ExcelFileWriter;
 
 public class ExampleofUse {
 	public static void main(String[] args) throws IOException {
@@ -15,7 +15,7 @@ public class ExampleofUse {
 		// preparing data structure
 
 		String sheetName = "test";
-		String excelFileName = "file.xls";
+		
 
 		List<String> columnsNames = new ArrayList<String>();
 		columnsNames.add("firstColumn");
@@ -52,15 +52,10 @@ public class ExampleofUse {
 		ExcelCreator ec = new ExcelCreator(sheetName, columnsNames,
 				columnsTypes, columnsDataContent, false);
 		
-		FileOutputStream fileOut = new FileOutputStream(excelFileName);
-		ec.getWorkBook().write(fileOut);
-		fileOut.close();
+		ExcelFileWriter fl = new ExcelFileWriter(ec, "myExcelFile.xls");
+		fl.writeFile();
 
 	}
 
-	private void writeExcelFile(ExcelCreator ec) throws IOException {
-		FileOutputStream fileOut = new FileOutputStream("Excel.xls");
-		ec.getWorkBook().write(fileOut);
-		fileOut.close();
-	}
+
 }
